@@ -1,5 +1,3 @@
-"use client";
-
 import { useRouter } from "next/navigation";
 import { AiOutlineClose } from "react-icons/ai";
 
@@ -15,9 +13,11 @@ export const menuItems = [
     href: "/",
   },
   {
-    name: "Switch to Turkish Mode",
-    onClickArg: "/tr",
-    href: "/tr",
+    name: window.location.pathname.endsWith("/tr")
+      ? "Switch to English mode"
+      : "Switch to Turkish Mode",
+    onClickArg: window.location.pathname.endsWith("/tr") ? "/" : "/tr",
+    href: window.location.pathname.endsWith("/tr") ? "/" : "/tr",
   },
 ];
 

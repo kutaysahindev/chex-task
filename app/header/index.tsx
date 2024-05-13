@@ -1,5 +1,5 @@
 import { GiHamburgerMenu } from "react-icons/gi";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export type HeaderProps = {
   date?: string;
@@ -8,14 +8,19 @@ export type HeaderProps = {
 };
 
 export default function Header(props: HeaderProps) {
-  const { date, editor, setShowMenu } = props;
+  const { editor, setShowMenu } = props;
+  const [isTurkish, setIsTurkish] = useState(false);
+
+  useEffect(() => {
+    setIsTurkish(window.location.pathname.endsWith("/tr"));
+  }, []);
 
   return (
     <div
       className=" md:p-4 flex flex-row md:justify-between w-full md:items-start justify-end "
       data-testid="header-div"
     >
-      <div className="hidden md:flex flex-col">
+      <div className="hidden md:flex flex-col ml-4">
         <div className="flex flex-row items-end">
           <h1 className="font-display font-bold text-4xl pr-4 text-yellow-500">
             Spelling Bee
@@ -23,7 +28,11 @@ export default function Header(props: HeaderProps) {
         </div>
         {editor && (
           <div>
-            <h2>Made for Chex task - Kutay Şahin</h2>
+            {isTurkish ? (
+              <h2>Chex görevi için yapıldı - Kutay Şahin</h2>
+            ) : (
+              <h2>Made for Chex task - Kutay Şahin</h2>
+            )}
           </div>
         )}
       </div>
