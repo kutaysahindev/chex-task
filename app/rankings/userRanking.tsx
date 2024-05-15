@@ -30,10 +30,7 @@ export default function UserRanking(props: UserRankingProps) {
   const { userPoints, answers, isLoading } = props;
 
   return (
-    <div
-      data-testid="user-ranking"
-      className="flex flex-row w-full items-center justify-center "
-    >
+    <div className="flex flex-row w-full items-center justify-center ">
       <h3 className="flex items-center justify-center p-1  w-32 font-semibold">
         {rankingLevels[getRanking(userPoints, answers)].name}
       </h3>

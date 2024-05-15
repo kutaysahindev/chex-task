@@ -42,7 +42,7 @@ export default function TextInput(props: InputProps) {
   }, [logKey]);
 
   return (
-    <div data-testid="text-input">
+    <div>
       <h2 className="font-bold text-2xl text-yellow-500 h-12 flex items-center justify-center  self-center">
         {userWord.split("").map((i, index) => (
           <span

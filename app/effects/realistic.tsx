@@ -57,7 +57,7 @@ export default function Realistic({ reaction }) {
   }, [makeShot]);
 
   return (
-    <div data-testid="realistic-div" className="z-50">
+    <div className="z-50">
       <ReactCanvasConfetti
         refConfetti={getInstance}
         style={{

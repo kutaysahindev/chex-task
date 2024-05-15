@@ -73,24 +73,20 @@ export default function Rankings(props: RankingsProps) {
       ).length
     ];
   return (
-    <div
-      data-testid="menu-page"
-      className="h-screen z-40 shadow w-full backdrop-blur-sm absolute flex flex-col items-center"
-    >
+    <div className="h-screen z-40 shadow w-full backdrop-blur-sm absolute flex flex-col items-center">
       <div className="rounded mx-2 mt-24 p-4 pb-8 md:mx-24 lg:mx-60 shadow-md border flex flex-col  bg-white text-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:border dark:border-zinc-800">
         <div className="flex flex-row justify-between ">
           <h2 className="font-bold text-2xl">
             {isTurkish ? "Sıralama" : "Rankings"}
           </h2>
           <button
-            data-testid="menu-icon"
             className="hover:text-yellow-500 text-2xl m-2 w-10 h-10 rounded-full flex items-center justify-center"
             onClick={() => setShowMenuItem(null)}
           >
             <AiOutlineClose />
           </button>
         </div>
-        <div data-testid="help-text" className="p-4 font-semithin text-lg">
+        <div className="p-4 font-semithin text-lg">
           <p>Ranks are based on a percentage of possible points in a puzzle.</p>
         </div>
         <div>
@@ -102,7 +98,6 @@ export default function Rankings(props: RankingsProps) {
             {rankingLevels
               .map((i) => (
                 <div
-                  data-testid={`${i.name}-level`}
                   key={i.name}
                   className={`${
                     i.minScoreMultiplier === currentRanking.minScoreMultiplier

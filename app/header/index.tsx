@@ -16,14 +16,11 @@ export default function Header(props: HeaderProps) {
   }, []);
 
   return (
-    <div
-      className=" md:p-4 flex flex-row md:justify-between w-full md:items-start justify-end "
-      data-testid="header-div"
-    >
+    <div className=" md:p-4 flex flex-row md:justify-between w-full md:items-start justify-end ">
       <div className="hidden md:flex flex-col ml-4">
         <div className="flex flex-row items-end">
           <h1 className="font-display font-bold text-4xl pr-4 text-yellow-500">
-            Spelling Bee
+            Spelling Bee 🐝
           </h1>
         </div>
         {editor && (
@@ -41,7 +38,6 @@ export default function Header(props: HeaderProps) {
           aria-label="Open/close menu"
           id="open-menu"
           className="hover:bg-gray-100 active:bg-gray-200 text-2xl m-2 w-10 h-10 rounded-full flex items-center justify-center"
-          data-testid="menu-icon"
           onClick={() => setShowMenu()}
         >
           <GiHamburgerMenu />

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { GameData, getPoints, handleSubmit } from "../lib/functions";
 import Header from "./header";
 import Menu from "./menu/menu";
-import HowTo from "./how-to";
+import HowTo from "./how-to/page";
 import Rankings from "./rankings";
 import Realistic from "./effects/realistic";
 import Encouragement from "./effects/encouragement";
@@ -104,9 +104,7 @@ export default function GameIndex(props) {
       {showMenuItem === "navbar" && (
         <Menu setShowMenuItem={(arg) => setShowMenuItem(arg)} />
       )}
-      {showMenuItem === "howTo" && (
-        <HowTo setShowMenuItem={(arg) => setShowMenuItem(arg)} />
-      )}
+      {showMenuItem === "howTo" && <HowTo />}
       {showMenuItem === "rankings" && (
         <Rankings
           currentScore={getPoints(foundWords)}
